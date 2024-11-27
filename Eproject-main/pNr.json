@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "model": "Recovery-Pro-001",
+    "image": "./card_img/pNr/1.jpg",
+    "name": "Recovery Pro Capsules",
+    "des": "Premium recovery capsules designed to reduce muscle soreness and speed up recovery after workouts.",
+    "price": 500
+  },
+  {
+    "id": 2,
+    "model": "EnergyBoost-002",
+    "image": "./card_img/pNr/2.webp",
+    "name": "Energy Boost Pills",
+    "des": "Formulated with caffeine and B vitamins to keep you energized throughout your day or workout.",
+    "price": 350
+  },
+  {
+    "id": 3,
+    "model": "HydraElectro-003",
+    "image": "./card_img/pNr/3.jpg",
+    "name": "Hydration Electrolyte Tablets",
+    "des": "Replenish lost electrolytes and stay hydrated with these easy-to-use tablets.",
+    "price": 250
+  },
+  {
+    "id": 4,
+    "model": "AminoBlast-004",
+    "image": "./card_img/pNr/4.webp",
+    "name": "Amino Blast Capsules",
+    "des": "Essential amino acid capsules to support muscle recovery and endurance during workouts.",
+    "price": 450
+  },
+  {
+    "id": 5,
+    "model": "FocusFuel-005",
+    "image": "./card_img/pNr/5.jpg",
+    "name": "Focus Fuel Tablets",
+    "des": "Enhance mental clarity and focus with this nootropic blend.",
+    "price": 400
+  },
+  {
+    "id": 6,
+    "model": "PreCharge-006",
+    "image": "./card_img/pNr/6.jpg",
+    "name": "Pre-Charge Energy Pills",
+    "des": "Boost stamina and energy levels with this pre-workout supplement.",
+    "price": 380
+  },
+  {
+    "id": 7,
+    "model": "JointFlex-007",
+    "image": "./card_img/pNr/7.jpg",
+    "name": "Joint Flex Capsules",
+    "des": "Promotes joint health and reduces inflammation for active individuals.",
+    "price": 300
+  },
+  {
+    "id": 8,
+    "model": "NightRestore-008",
+    "image": "./card_img/pNr/8.jpg",
+    "name": "Night Restore Capsules",
+    "des": "Enhance muscle recovery and improve sleep quality with this natural supplement.",
+    "price": 500
+  },
+  {
+    "id": 9,
+    "model": "EnduroTabs-009",
+    "image": "./card_img/pNr/9.webp",
+    "name": "Endurance Tablets",
+    "des": "Increase stamina and reduce fatigue during prolonged physical activity.",
+    "price": 420
+  },
+  {
+    "id": 10,
+    "model": "CortisolControl-010",
+    "image": "./card_img/pNr/10.jpg",
+    "name": "Cortisol Control Capsules",
+    "des": "Supports stress management and reduces cortisol levels after intense training.",
+    "price": 550
+  },
+  {
+    "id": 11,
+    "model": "AntiFatigue-011",
+    "image": "./card_img/pNr/11.webp",
+    "name": "Anti-Fatigue Tablets",
+    "des": "Formulated to combat workout fatigue and keep you energized longer.",
+    "price": 300
+  },
+  {
+    "id": 12,
+    "model": "PostCharge-012",
+    "image": "./card_img/pNr/12.jpg",
+    "name": "Post-Charge Recovery Pills",
+    "des": "Optimize recovery and replenish glycogen levels post-workout.",
+    "price": 480
+  },
+  {
+    "id": 13,
+    "model": "FlexAid-013",
+    "image": "./card_img/pNr/13.png",
+    "name": "Flex Aid Capsules",
+    "des": "Support joint lubrication and flexibility with glucosamine and chondroitin.",
+    "price": 520
+  },
+  {
+    "id": 14,
+    "model": "SleepAid-014",
+    "image": "./card_img/pNr/14.jpg",
+    "name": "Sleep Aid Capsules",
+    "des": "Relax and recover with this blend of melatonin and magnesium.",
+    "price": 280
+  },
+  {
+    "id": 15,
+    "model": "LeanRecovery-015",
+    "image": "./card_img/pNr/15.jpg",
+    "name": "Lean Recovery Capsules",
+    "des": "Promotes muscle recovery without adding unnecessary calories.",
+    "price": 460
+  },
+  {
+    "id": 16,
+    "model": "CalmBoost-016",
+    "image": "./card_img/pNr/16.jpg",
+    "name": "Calm Boost Tablets",
+    "des": "A blend of adaptogens to reduce stress and improve overall performance.",
+    "price": 340
+  }
+]

@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "model": "WW-Protein-123",
+    "image": "./card_img/ww/1.jpg",
+    "name": "Whey Protein Powder",
+    "des": "High-quality whey protein powder designed to support muscle recovery and weight management.",
+    "price": 2500
+  },
+  {
+    "id": 2,
+    "model": "WW-Protein-456",
+    "image": "./card_img/ww/2.jpg",
+    "name": "Plant-Based Protein Powder",
+    "des": "A vegan-friendly protein powder sourced from pea and rice proteins, ideal for weight control and muscle repair.",
+    "price": 2000
+  },
+  {
+    "id": 3,
+    "model": "WW-Vitamin-789",
+    "image": "./card_img/ww/3.webp",
+    "name": "Multivitamin Gummies",
+    "des": "Delicious multivitamin gummies formulated to support metabolism and energy levels.",
+    "price": 1500
+  },
+  {
+    "id": 4,
+    "model": "WW-Capsule-012",
+    "image": "./card_img/ww/4.webp",
+    "name": "Fat Burner Capsules",
+    "des": "Capsules with natural ingredients to promote fat metabolism and energy enhancement.",
+    "price": 1800
+  },
+  {
+    "id": 5,
+    "model": "WW-Protein-678",
+    "image": "./card_img/ww/5.jpg",
+    "name": "Casein Protein Powder",
+    "des": "Slow-digesting casein protein powder to support muscle recovery overnight.",
+    "price": 2700
+  },
+  {
+    "id": 6,
+    "model": "WW-Pill-345",
+    "image": "./card_img/ww/6.jpg",
+    "name": "Appetite Suppressant Pills",
+    "des": "Herbal appetite suppressant pills designed to reduce hunger and support weight management.",
+    "price": 1200
+  },
+  {
+    "id": 7,
+    "model": "WW-Meal-901",
+    "image": "./card_img/ww/7.png",
+    "name": "Meal Replacement Shakes",
+    "des": "Complete nutrition meal replacement shakes for convenient weight management.",
+    "price": 3200
+  },
+  {
+    "id": 8,
+    "model": "WW-Drink-456",
+    "image": "./card_img/ww/8.jpg",
+    "name": "Electrolyte Hydration Drink",
+    "des": "A refreshing electrolyte drink to rehydrate and support active lifestyles.",
+    "price": 900
+  },
+  {
+    "id": 9,
+    "model": "WW-Bar-789",
+    "image": "./card_img/ww/9.jpg",
+    "name": "Protein Snack Bars",
+    "des": "Tasty protein bars ideal for on-the-go snacking and post-workout recovery.",
+    "price": 1200
+  },
+  {
+    "id": 10,
+    "model": "WW-Fiber-234",
+    "image": "./card_img/ww/10.jpg",
+    "name": "Dietary Fiber Supplement",
+    "des": "High-fiber supplement to support digestion and weight wellness.",
+    "price": 800
+  },
+  {
+    "id": 11,
+    "model": "WW-Omega-567",
+    "image": "./card_img/ww/11.jpg",
+    "name": "Omega-3 Fish Oil Capsules",
+    "des": "Rich in EPA and DHA, these capsules support heart health and weight management.",
+    "price": 2200
+  },
+  {
+    "id": 12,
+    "model": "WW-GreenTea-678",
+    "image": "./card_img/ww/12.jpg",
+    "name": "Green Tea Extract Capsules",
+    "des": "Powerful antioxidants and metabolism boosters to aid in weight control.",
+    "price": 1700
+  },
+  {
+    "id": 13,
+    "model": "WW-BCAA-890",
+    "image": "./card_img/ww/13.jpg",
+    "name": "BCAA Powder",
+    "des": "Branched-chain amino acids to support muscle recovery and reduce fatigue.",
+    "price": 2100
+  },
+  {
+    "id": 14,
+    "model": "WW-Collagen-321",
+    "image": "./card_img/ww/14.jpg",
+    "name": "Collagen Peptides",
+    "des": "Supports skin health, joint support, and weight management.",
+    "price": 2500
+  },
+  {
+    "id": 15,
+    "model": "WW-Probiotic-432",
+    "image": "./card_img/ww/15.webp",
+    "name": "Probiotic Capsules",
+    "des": "Improves digestion and gut health for better nutrient absorption and metabolism.",
+    "price": 1500
+  },
+  {
+    "id": 16,
+    "model": "WW-CarbBlocker-543",
+    "image": "./card_img/ww/16.jpg",
+    "name": "Carb Blocker Pills",
+    "des": "Helps reduce carbohydrate absorption to aid in weight loss.",
+    "price": 1800
+  }
+]

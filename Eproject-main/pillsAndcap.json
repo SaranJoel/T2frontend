@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "image": "./card_img/cd/1.jpg",
+    "model": "ProteinCapsule-001",
+    "name": "Whey Protein Capsules",
+    "des": "High-quality whey protein capsules to support muscle recovery and growth.",
+    "price": 450
+  },
+  {
+    "id": 2,
+    "image": "./card_img/cd/2.jpg",
+    "model": "VitaminCapsule-002",
+    "name": "Multi Max vitamin Capsules",
+    "des": "A blend of essential vitamins and minerals to promote overall health.",
+    "price": 300
+  },
+  {
+    "id": 3,
+    "image": "./card_img/cd/3.jpg",
+    "model": "OmegaCapsule-003",
+    "name": "Omega-3 Fish Oil Capsules",
+    "des": "Rich in omega-3 fatty acids to support heart and brain health.",
+    "price": 520
+  },
+  {
+    "id": 4,
+    "image": "./card_img/cd/4.jpg",
+    "model": "CreatineCapsule-004",
+    "name": "Creatine-Monohydrate Capsules",
+    "des": "Enhance performance and strength with creatine monohydrate capsules.",
+    "price": 400
+  },
+  {
+    "id": 5,
+    "image": "./card_img/cd/5.webp",
+    "model": "ZincCapsule-005",
+    "name": "Zinc Supplements",
+    "des": "Boost your immune system with high-potency zinc supplements.",
+    "price": 250
+  },
+  {
+    "id": 6,
+    "image": "./card_img/cd/6.webp",
+    "model": "IronCapsule-006",
+    "name": "Iron Capsules",
+    "des": "Essential iron capsules to prevent anemia and improve energy levels.",
+    "price": 350
+  },
+  {
+    "id": 7,
+    "image": "./card_img/cd/7.jpg",
+    "model": "CollagenCapsule-007",
+    "name": "Collagen Peptide Capsules",
+    "des": "Support healthy skin, hair, and joints with collagen peptides.",
+    "price": 600
+  },
+  {
+    "id": 8,
+    "image": "./card_img/cd/8.webp",
+    "model": "CalciumCapsule-008",
+    "name": "Calcium + Vitamin D Capsules",
+    "des": "Promote strong bones and teeth with calcium and vitamin D.",
+    "price": 280
+  },
+  {
+    "id": 9,
+    "image": "./card_img/cd/9.jpg",
+    "model": "MagnesiumCapsule-009",
+    "name": "Magnesium Supplements",
+    "des": "Help relax muscles and improve sleep with magnesium supplements.",
+    "price": 340
+  },
+  {
+    "id": 10,
+    "image": "./card_img/cd/10.webp",
+    "model": "ProbioticCapsule-010",
+    "name": "Probiotic Capsules",
+    "des": "Support digestive health and immune function with probiotics.",
+    "price": 500
+  },
+  {
+    "id": 11,
+    "image": "./card_img/cd/11.jpg",
+    "model": "VitaminCCapsule-011",
+    "name": "Vitamin C Capsules",
+    "des": "Boost your immune system and skin health with vitamin C.",
+    "price": 220
+  },
+  {
+    "id": 12,
+    "image": "./card_img/cd/12.png",
+    "model": "BComplexCapsule-012",
+    "name": "Vitamin B Complex Capsules",
+    "des": "Support energy production and nervous system health with B complex.",
+    "price": 360
+  },
+  {
+    "id": 13,
+    "image": "./card_img/cd/13.jpg",
+    "model": "TurmericCapsule-013",
+    "name": "Turmeric Curcumin Capsules",
+    "des": "Anti-inflammatory turmeric capsules for joint and overall health.",
+    "price": 450
+  },
+  {
+    "id": 14,
+    "image": "./card_img/cd/14.jpg",
+    "model": "AshwagandhaCapsule-014",
+    "name": "Ashwagandha Capsules",
+    "des": "Reduce stress and enhance mental clarity with ashwagandha supplements.",
+    "price": 410
+  },
+  {
+    "id": 15,
+    "image": "./card_img/cd/15.jpg",
+    "model": "BiotinCapsule-015",
+    "name": "Biotin Capsules",
+    "des": "Promote hair and nail growth with high-potency biotin supplements.",
+    "price": 330
+  },
+  {
+    "id": 16,
+    "image": "./card_img/cd/16.jpg",
+    "model": "MelatoninCapsule-016",
+    "name": "Melatonin Capsules",
+    "des": "Improve sleep quality with natural melatonin supplements.",
+    "price": 250
+  }
+]

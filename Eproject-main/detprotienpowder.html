@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <!-- bootstrap cdn   -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstrap links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- jquery link  -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom-css  -->
+    <link rel="stylesheet" href="snippets.css" />
+    <link rel="stylesheet" href="detail.css" />
+    <!-- custom js -->
+    <script src="snippets.js"></script>
+  </head>
+  <body>
+    <!-- nav bar  -->
+    <header id="NAV"></header>
+
+    <div class="container page">
+      <div class="row" id="productDetail">
+        <div class="col-lg-5">
+          <img id="productImage" class="card-img-top" alt="Product Image" />
+        </div>
+
+        <div class="col-lg-6">
+          <h5 id="productName" class="card-title">Product Name</h5>
+          <p id="productModel" class="card-text">Product Model</p>
+          <p id="productPrice" class="card-text">Price</p>
+          <p class="card-text">Description:</p>
+          <p id="productDescription" class="card-text"></p>
+
+          <!-- Add to Cart Button -->
+          <button id="addToCartButton" class="btn btn-primary">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-light text-dark p-5" id="FOOT"></footer>
+    <script>
+      // Retrieve product ID from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+
+      const products = [
+        {
+          id: 1,
+          name: "Optimum Nutrition Gold Standard Whey Protein",
+          model: "ON-100%",
+          image: "./card_img/pp/1.webp",
+          price: 59.99,
+          des: "Optimum Nutrition Gold Standard Whey Protein provides 24g of protein per serving with 5.5g of BCAAs to support muscle recovery.",
+        },
+        {
+          id: 2,
+          name: "Dymatize Nutrition Elite Whey Protein",
+          model: "DYM-ELITE",
+          image: "./card_img/pp/2.jpg",
+          price: 49.99,
+          des: "Dymatize Elite Whey Protein is known for its fast-absorbing formula, offering 25g of protein per serving to help with muscle growth.",
+        },
+        {
+          id: 3,
+          name: "BSN Syntha-6 Whey Protein",
+          model: "BSN-SYNTHA6",
+          image: "./card_img/pp/3.jpg",
+          price: 49.99,
+          des: "BSN Syntha-6 is a protein blend offering 22g of protein per serving, designed for sustained protein release.",
+        },
+        {
+          id: 4,
+          name: "MuscleTech NitroTech Whey Protein",
+          model: "MUSCLE-NITROTECH",
+          image: "./card_img/pp/4.png",
+          price: 59.99,
+          des: "MuscleTech NitroTech contains 30g of protein and added creatine to enhance muscle strength and performance.",
+        },
+        {
+          id: 5,
+          name: "Cellucor COR-Performance Whey Protein",
+          model: "CELL-COR",
+          image: "./card_img/pp/5.jpg",
+          price: 54.99,
+          des: "Cellucor COR-Performance Whey Protein provides 25g of protein with a great-tasting formula that supports muscle recovery.",
+        },
+        {
+          id: 6,
+          name: "GNC Pro Performance Whey Protein",
+          model: "GNC-PRO",
+          image: "./card_img/pp/6.jpg",
+          price: 45.99,
+          des: "GNC Pro Performance Whey Protein offers 20g of protein per serving, with added vitamins and minerals for muscle repair.",
+        },
+        {
+          id: 7,
+          name: "Kaged Muscle Kasein Protein",
+          model: "KAGED-KASEIN",
+          image: "./card_img/pp/7.jpg",
+          price: 69.99,
+          des: "Kaged Muscle Kasein Protein is a slow-digesting protein, perfect for nighttime muscle recovery with 24g of protein per serving.",
+        },
+        {
+          id: 8,
+          name: "JYM Supplement Science Pro JYM",
+          model: "JYM-PRO",
+          image: "./card_img/pp/8.jpg",
+          price: 59.99,
+          des: "JYM Pro JYM combines whey protein isolate, micellar casein, and egg protein to deliver 24g of high-quality protein.",
+        },
+        {
+          id: 9,
+          name: "Vega Sport Premium Protein",
+          model: "VEGA-SPORT",
+          image: "./card_img/pp/9.webp",
+          price: 49.99,
+          des: "Vega Sport Premium Protein is a plant-based protein with 30g of protein per serving, ideal for athletes looking for a vegan option.",
+        },
+        {
+          id: 10,
+          name: "Orgain Organic Protein Powder",
+          model: "ORG-ORGPROTEIN",
+          image: "./card_img/pp/10.webp",
+          price: 39.99,
+          des: "Orgain Organic Protein Powder is a plant-based protein offering 21g of protein per serving from organic ingredients.",
+        },
+        {
+          id: 11,
+          name: "True Nutrition Custom Whey Protein",
+          model: "TRU-CUSTPROTEIN",
+          image: "./card_img/pp/11.webp",
+          price: 49.99,
+          des: "True Nutrition offers custom protein blends with 25g of protein per serving, tailored to your dietary needs.",
+        },
+        {
+          id: 12,
+          name: "Isopure Low Carb Protein Powder",
+          model: "ISO-LC",
+          image: "./card_img/pp/12.webp",
+          price: 59.99,
+          des: "Isopure Low Carb Protein offers 25g of protein per serving with zero carbs, perfect for low-carb dieters.",
+        },
+        {
+          id: 13,
+          name: "MyProtein Impact Whey Protein",
+          model: "MP-IMPACTWHEY",
+          image: "./card_img/pp/13.png",
+          price: 39.99,
+          des: "MyProtein Impact Whey Protein delivers 21g of protein per serving with a variety of delicious flavors.",
+        },
+        {
+          id: 14,
+          name: "Evlution Nutrition Stimulant Whey Protein",
+          model: "EVL-STIMFREE",
+          image: "./card_img/pp/14.jpg",
+          price: 44.99,
+          des: "Evlution Nutrition Stimulant Free Whey Protein provides 25g of protein per serving without any added stimulants.",
+        },
+        {
+          id: 15,
+          name: "Labrada Lean Pro 100 Whey Protein",
+          model: "LABRADA-LEANSUP",
+          image: "./card_img/pp/15.webp",
+          price: 49.99,
+          des: "Labrada Lean Pro 100 Whey Protein has 25g of protein per serving, ideal for muscle maintenance and fat loss.",
+        },
+        {
+          id: 16,
+          name: "Muscletech Phase8 Protein Powder",
+          model: "MUSCLE-PHASE8",
+          image: "./card_img/pp/16.webp",
+          price: 59.99,
+          des: "Muscletech Phase8 Protein is a 8-hour protein release formula, offering sustained amino acid delivery for muscle recovery.",
+        },
+      ];
+
+      // Find the product with the matching ID
+      const selectedProduct = products.find(
+        (product) => product.id == productId
+      );
+
+      if (selectedProduct) {
+        document.getElementById("productImage").src = selectedProduct.image;
+        document.getElementById("productName").textContent =
+          selectedProduct.name;
+        document.getElementById(
+          "productModel"
+        ).textContent = `Product Model: ${selectedProduct.model}`;
+        document.getElementById(
+          "productPrice"
+        ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById("productDescription").textContent =
+          selectedProduct.des;
+
+        // Add to Cart Button Click Event
+        const addToCartButton = document.getElementById("addToCartButton");
+        addToCartButton.addEventListener("click", () => {
+          alert(`Added ${selectedProduct.name} to the cart!`);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Detail</title>
+    <!-- bootstrap cdn   -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstrap links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- jquery link  -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom-css  -->
+    <link rel="stylesheet" href="snippets.css" />
+    <link rel="stylesheet" href="detail.css" />
+    <!-- custom js -->
+    <script src="snippets.js"></script>
+  </head>
+  <body>
+    <!-- nav bar  -->
+    <header id="NAV"></header>
+
+    <div class="container page">
+      <div class="row" id="productDetail">
+        <div class="col-lg-5">
+          <img id="productImage" class="card-img-top" alt="Product Image" />
+        </div>
+
+        <div class="col-lg-6">
+          <h5 id="productName" class="card-title">Product Name</h5>
+          <p id="productModel" class="card-text">Product Model</p>
+          <p id="productPrice" class="card-text">Price</p>
+          <p class="card-text">Description:</p>
+          <p id="productDescription" class="card-text"></p>
+
+          <!-- Add to Cart Button -->
+          <button id="addToCartButton" class="btn btn-primary">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="bg-light text-dark p-5" id="FOOT"></footer>
+    <script>
+      // Retrieve product ID from URL parameter
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+
+      const products = [
+        {
+          id: 1,
+          image: "./card_img/cd/1.jpg",
+          model: "ProteinCapsule-001",
+          name: "Whey Protein Capsules",
+          des: "High-quality whey protein capsules to support muscle recovery and growth.",
+          price: 450,
+        },
+        {
+          id: 2,
+          image: "./card_img/cd/2.jpg",
+          model: "VitaminCapsule-002",
+          name: "Multi Max vitamin Capsules",
+          des: "A blend of essential vitamins and minerals to promote overall health.",
+          price: 300,
+        },
+        {
+          id: 3,
+          image: "./card_img/cd/3.jpg",
+          model: "OmegaCapsule-003",
+          name: "Omega-3 Fish Oil Capsules",
+          des: "Rich in omega-3 fatty acids to support heart and brain health.",
+          price: 520,
+        },
+        {
+          id: 4,
+          image: "./card_img/cd/4.jpg",
+          model: "CreatineCapsule-004",
+          name: "Creatine-Monohydrate Capsules",
+          des: "Enhance performance and strength with creatine monohydrate capsules.",
+          price: 400,
+        },
+        {
+          id: 5,
+          image: "./card_img/cd/5.webp",
+          model: "ZincCapsule-005",
+          name: "Zinc Supplements",
+          des: "Boost your immune system with high-potency zinc supplements.",
+          price: 250,
+        },
+        {
+          id: 6,
+          image: "./card_img/cd/6.webp",
+          model: "IronCapsule-006",
+          name: "Iron Capsules",
+          des: "Essential iron capsules to prevent anemia and improve energy levels.",
+          price: 350,
+        },
+        {
+          id: 7,
+          image: "./card_img/cd/7.jpg",
+          model: "CollagenCapsule-007",
+          name: "Collagen Peptide Capsules",
+          des: "Support healthy skin, hair, and joints with collagen peptides.",
+          price: 600,
+        },
+        {
+          id: 8,
+          image: "./card_img/cd/8.webp",
+          model: "CalciumCapsule-008",
+          name: "Calcium + Vitamin D Capsules",
+          des: "Promote strong bones and teeth with calcium and vitamin D.",
+          price: 280,
+        },
+        {
+          id: 9,
+          image: "./card_img/cd/9.jpg",
+          model: "MagnesiumCapsule-009",
+          name: "Magnesium Supplements",
+          des: "Help relax muscles and improve sleep with magnesium supplements.",
+          price: 340,
+        },
+        {
+          id: 10,
+          image: "./card_img/cd/10.webp",
+          model: "ProbioticCapsule-010",
+          name: "Probiotic Capsules",
+          des: "Support digestive health and immune function with probiotics.",
+          price: 500,
+        },
+        {
+          id: 11,
+          image: "./card_img/cd/11.jpg",
+          model: "VitaminCCapsule-011",
+          name: "Vitamin C Capsules",
+          des: "Boost your immune system and skin health with vitamin C.",
+          price: 220,
+        },
+        {
+          id: 12,
+          image: "./card_img/cd/12.png",
+          model: "BComplexCapsule-012",
+          name: "Vitamin B Complex Capsules",
+          des: "Support energy production and nervous system health with B complex.",
+          price: 360,
+        },
+        {
+          id: 13,
+          image: "./card_img/cd/13.jpg",
+          model: "TurmericCapsule-013",
+          name: "Turmeric Curcumin Capsules",
+          des: "Anti-inflammatory turmeric capsules for joint and overall health.",
+          price: 450,
+        },
+        {
+          id: 14,
+          image: "./card_img/cd/14.jpg",
+          model: "AshwagandhaCapsule-014",
+          name: "Ashwagandha Capsules",
+          des: "Reduce stress and enhance mental clarity with ashwagandha supplements.",
+          price: 410,
+        },
+        {
+          id: 15,
+          image: "./card_img/cd/15.jpg",
+          model: "BiotinCapsule-015",
+          name: "Biotin Capsules",
+          des: "Promote hair and nail growth with high-potency biotin supplements.",
+          price: 330,
+        },
+        {
+          id: 16,
+          image: "./card_img/cd/16.jpg",
+          model: "MelatoninCapsule-016",
+          name: "Melatonin Capsules",
+          des: "Improve sleep quality with natural melatonin supplements.",
+          price: 250,
+        },
+      ];
+
+      // Find the product with the matching ID
+      const selectedProduct = products.find(
+        (product) => product.id == productId
+      );
+
+      if (selectedProduct) {
+        document.getElementById("productImage").src = selectedProduct.image;
+        document.getElementById("productName").textContent =
+          selectedProduct.name;
+        document.getElementById(
+          "productModel"
+        ).textContent = `Product Model: ${selectedProduct.model}`;
+        document.getElementById(
+          "productPrice"
+        ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById("productDescription").textContent =
+          selectedProduct.des;
+
+        // Add to Cart Button Click Event
+        const addToCartButton = document.getElementById("addToCartButton");
+        addToCartButton.addEventListener("click", () => {
+          alert(`Added ${selectedProduct.name} to the cart!`);
+        });
+      }
+    </script>
+  </body>
+</html>
