@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login or Create Account</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <!-- Logo/Image -->
+      <img
+        src="/Eproject-main/assets/logo.png"
+        alt="Login Image"
+        class="login-image"
+      />
+
+      <!-- Login Form -->
+      <div id="login-form" class="form">
+        <h2>Login</h2>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+          required
+        />
+        <div id="emailError" class="error-message d-none">
+          Please enter a valid email.
+        </div>
+
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="Enter your password"
+          required
+        />
+        <div id="passwordError" class="error-message d-none">
+          Password must be at least 6 characters long.
+        </div>
+
+        <button onclick="login()" class="login-button">Login</button>
+        <p>
+          Don't have an account?
+          <a href="#" onclick="switchToSignup()">Create one</a>
+        </p>
+        <div id="login-error" class="error-message d-none">
+          Invalid email or password.
+        </div>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-form" class="form d-none">
+        <h2>Create Account</h2>
+        <label for="signup-name">Name:</label>
+        <input
+          type="text"
+          id="signup-name"
+          placeholder="Enter your name"
+          required
+        />
+
+        <label for="signup-email">Email:</label>
+        <input
+          type="email"
+          id="signup-email"
+          placeholder="Enter your email"
+          required
+        />
+        <div id="signup-email-error" class="error-message d-none">
+          Please enter a valid email.
+        </div>
+
+        <label for="signup-password">Password:</label>
+        <input
+          type="password"
+          id="signup-password"
+          placeholder="Create a password"
+          required
+        />
+        <div id="signup-password-error" class="error-message d-none">
+          Password must be at least 6 characters long.
+        </div>
+
+        <button onclick="signup()" class="signup-button">Sign Up</button>
+        <p>
+          Already have an account?
+          <a href="#" onclick="switchToLogin()">Login</a>
+        </p>
+        <div id="signup-error" class="error-message d-none">
+          Email is already registered.
+        </div>
+        <div id="signup-success" class="success-message d-none">
+          Account created successfully!
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="loginvalidation.js"></script>
+  </body>
+</html>

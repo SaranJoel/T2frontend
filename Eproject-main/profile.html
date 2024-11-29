@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Profile</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- bootstrap links -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <script src="./bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <!-- jquery link  -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- custom-css  -->
+    <link rel="stylesheet" href="snippets.css" />
+    <link rel="stylesheet" href="profile.css" />
+    <!-- custom js  -->
+    <script src="snippets.js"></script>
+  </head>
+  <body>
+    <header id="NAV"></header>
+
+    <div class="profile-page">
+      <div class="profile-card">
+        <div class="profile-header">
+          <input
+            type="file"
+            id="profile-photo"
+            class="file-input"
+            style="display: none"
+          />
+          <label for="profile-photo" class="upload-button"
+            >Upload New Photo</label
+          >
+          <img
+            src="path/to/profile-image.jpg"
+            alt="Profile Picture"
+            class="profile-image"
+            id="profile-img"
+          />
+        </div>
+        <div class="profile-info">
+          <p>
+            Upload a new avatar. Larger image will be resized automatically.<br />Maximum
+            upload size is 1 MB.
+          </p>
+          <p>Member Since: <strong>29 September 2019</strong></p>
+        </div>
+      </div>
+
+      <div class="profile-edit-form">
+        <h2>Edit Profile</h2>
+        <button type="button" id="edit-button" class="edit-button">Edit</button>
+        <form action="update-profile.php" method="post" id="profile-form">
+          <div class="form-section">
+            <h3>User Info</h3>
+            <label for="full-name">Full Name:</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full-name"
+              placeholder="James"
+              value="James"
+              disabled
+            />
+
+            <label for="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Allan"
+              value="Allan"
+              disabled
+            />
+
+            <label for="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="**********"
+              disabled
+            />
+            <span id="password-error" class="error-message"></span>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              placeholder="**********"
+              disabled
+            />
+            <span id="confirm-password-error" class="error-message"></span>
+
+            <label for="email">Email Address:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="demomail@mail.com"
+              value="demomail@mail.com"
+              disabled
+            />
+            <span id="email-error" class="error-message"></span>
+
+            <label for="confirm-email">Confirm Email Address:</label>
+            <input
+              type="email"
+              id="confirm-email"
+              name="confirm-email"
+              placeholder="demomail@mail.com"
+              value="demomail@mail.com"
+              disabled
+            />
+            <span id="confirm-email-error" class="error-message"></span>
+          </div>
+
+          <button type="submit" class="update-button" id="update-button">
+            Update Info
+          </button>
+        </form>
+        <p id="confirmation-message" class="confirmation-message"></p>
+      </div>
+      <footer id="FOOT"></footer>
+    </div>
+
+    <script>
+      document
+        .querySelector(".upload-button")
+        .addEventListener("click", function () {
+          document.getElementById("profile-photo").click();
+        });
+
+      document
+        .getElementById("profile-photo")
+        .addEventListener("change", function () {
+          const file = this.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              document.getElementById("profile-img").src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+
+      document
+        .getElementById("edit-button")
+        .addEventListener("click", function () {
+          const formElements = document.querySelectorAll("#profile-form input");
+          formElements.forEach(function (input) {
+            input.disabled = !input.disabled;
+          });
+
+          // Change the button text based on current state
+          if (this.textContent === "Edit") {
+            this.textContent = "Cancel";
+          } else {
+            this.textContent = "Edit";
+          }
+        });
+
+      document
+        .getElementById("update-button")
+        .addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent form submission for validation
+
+          // Clear previous error messages
+          document.getElementById("email-error").textContent = "";
+          document.getElementById("confirm-email-error").textContent = "";
+          document.getElementById("password-error").textContent = "";
+          document.getElementById("confirm-password-error").textContent = "";
+
+          const email = document.getElementById("email").value.trim();
+          const confirmEmail = document
+            .getElementById("confirm-email")
+            .value.trim();
+          const password = document.getElementById("password").value.trim();
+          const confirmPassword = document
+            .getElementById("confirm-password")
+            .value.trim();
+
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(email)) {
+            document.getElementById("email-error").textContent =
+              "Please enter a valid email address.";
+            return;
+          }
+          if (email !== confirmEmail) {
+            document.getElementById("confirm-email-error").textContent =
+              "Email addresses do not match.";
+            return;
+          }
+
+          // Password validation
+          if (password.length < 6) {
+            document.getElementById("password-error").textContent =
+              "Password must be at least 6 characters long.";
+            return;
+          }
+          if (password !== confirmPassword) {
+            document.getElementById("confirm-password-error").textContent =
+              "Passwords do not match.";
+            return;
+          }
+
+          // If all validations pass, show confirmation message
+          document.getElementById("confirmation-message").textContent =
+            "Info Updated";
+          document.getElementById("confirmation-message").style.color =
+            "#28a745";
+
+          // Reset the "Edit" button text to "Edit"
+          document.getElementById("edit-button").textContent = "Edit";
+
+          // Clear the confirmation message after a few seconds
+          setTimeout(() => {
+            document.getElementById("confirmation-message").textContent = "";
+          }, 3000);
+        });
+    </script>
+  </body>
+</html>
