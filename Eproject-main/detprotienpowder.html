@@ -61,6 +61,7 @@
           <h5 id="productName" class="card-title">Product Name</h5>
           <p id="productModel" class="card-text">Product Model</p>
           <p id="productPrice" class="card-text">Price</p>
+          <p id="productQuantity" class="card-text">Quantity:</p>
           <p class="card-text">Description:</p>
           <p id="productDescription" class="card-text"></p>
 
@@ -87,6 +88,7 @@
           image: "./card_img/pp/1.webp",
           price: 59.99,
           des: "Optimum Nutrition Gold Standard Whey Protein provides 24g of protein per serving with 5.5g of BCAAs to support muscle recovery.",
+          quantity: 85,
         },
         {
           id: 2,
@@ -95,6 +97,7 @@
           image: "./card_img/pp/2.jpg",
           price: 49.99,
           des: "Dymatize Elite Whey Protein is known for its fast-absorbing formula, offering 25g of protein per serving to help with muscle growth.",
+          quantity: 60,
         },
         {
           id: 3,
@@ -103,6 +106,7 @@
           image: "./card_img/pp/3.jpg",
           price: 49.99,
           des: "BSN Syntha-6 is a protein blend offering 22g of protein per serving, designed for sustained protein release.",
+          quantity: 43,
         },
         {
           id: 4,
@@ -111,6 +115,7 @@
           image: "./card_img/pp/4.png",
           price: 59.99,
           des: "MuscleTech NitroTech contains 30g of protein and added creatine to enhance muscle strength and performance.",
+          quantity: 92,
         },
         {
           id: 5,
@@ -119,6 +124,7 @@
           image: "./card_img/pp/5.jpg",
           price: 54.99,
           des: "Cellucor COR-Performance Whey Protein provides 25g of protein with a great-tasting formula that supports muscle recovery.",
+          quantity: 77,
         },
         {
           id: 6,
@@ -127,6 +133,7 @@
           image: "./card_img/pp/6.jpg",
           price: 45.99,
           des: "GNC Pro Performance Whey Protein offers 20g of protein per serving, with added vitamins and minerals for muscle repair.",
+          quantity: 33,
         },
         {
           id: 7,
@@ -135,6 +142,7 @@
           image: "./card_img/pp/7.jpg",
           price: 69.99,
           des: "Kaged Muscle Kasein Protein is a slow-digesting protein, perfect for nighttime muscle recovery with 24g of protein per serving.",
+          quantity: 56,
         },
         {
           id: 8,
@@ -143,6 +151,7 @@
           image: "./card_img/pp/8.jpg",
           price: 59.99,
           des: "JYM Pro JYM combines whey protein isolate, micellar casein, and egg protein to deliver 24g of high-quality protein.",
+          quantity: 74,
         },
         {
           id: 9,
@@ -151,6 +160,7 @@
           image: "./card_img/pp/9.webp",
           price: 49.99,
           des: "Vega Sport Premium Protein is a plant-based protein with 30g of protein per serving, ideal for athletes looking for a vegan option.",
+          quantity: 49,
         },
         {
           id: 10,
@@ -159,6 +169,7 @@
           image: "./card_img/pp/10.webp",
           price: 39.99,
           des: "Orgain Organic Protein Powder is a plant-based protein offering 21g of protein per serving from organic ingredients.",
+          quantity: 65,
         },
         {
           id: 11,
@@ -167,6 +178,7 @@
           image: "./card_img/pp/11.webp",
           price: 49.99,
           des: "True Nutrition offers custom protein blends with 25g of protein per serving, tailored to your dietary needs.",
+          quantity: 38,
         },
         {
           id: 12,
@@ -175,6 +187,7 @@
           image: "./card_img/pp/12.webp",
           price: 59.99,
           des: "Isopure Low Carb Protein offers 25g of protein per serving with zero carbs, perfect for low-carb dieters.",
+          quantity: 91,
         },
         {
           id: 13,
@@ -183,6 +196,7 @@
           image: "./card_img/pp/13.png",
           price: 39.99,
           des: "MyProtein Impact Whey Protein delivers 21g of protein per serving with a variety of delicious flavors.",
+          quantity: 72,
         },
         {
           id: 14,
@@ -191,6 +205,7 @@
           image: "./card_img/pp/14.jpg",
           price: 44.99,
           des: "Evlution Nutrition Stimulant Free Whey Protein provides 25g of protein per serving without any added stimulants.",
+          quantity: 41,
         },
         {
           id: 15,
@@ -199,6 +214,7 @@
           image: "./card_img/pp/15.webp",
           price: 49.99,
           des: "Labrada Lean Pro 100 Whey Protein has 25g of protein per serving, ideal for muscle maintenance and fat loss.",
+          quantity: 58,
         },
         {
           id: 16,
@@ -207,6 +223,7 @@
           image: "./card_img/pp/16.webp",
           price: 59.99,
           des: "Muscletech Phase8 Protein is a 8-hour protein release formula, offering sustained amino acid delivery for muscle recovery.",
+          quantity: 84,
         },
       ];
 
@@ -225,13 +242,23 @@
         document.getElementById(
           "productPrice"
         ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById(
+          "productQuantity"
+        ).textContent = `Quantity: ${selectedProduct.quantity}`;
         document.getElementById("productDescription").textContent =
           selectedProduct.des;
 
         // Add to Cart Button Click Event
-        const addToCartButton = document.getElementById("addToCartButton");
         addToCartButton.addEventListener("click", () => {
-          alert(`Added ${selectedProduct.name} to the cart!`);
+          if (selectedProduct.quantity > 0) {
+            selectedProduct.quantity -= 1; // Reduce quantity
+            document.getElementById(
+              "productQuantity"
+            ).textContent = `Quantity: ${selectedProduct.quantity}`; // Update displayed quantity
+            alert(`Added ${selectedProduct.name} to the cart!`);
+          } else {
+            alert(`Sorry, ${selectedProduct.name} is out of stock!`);
+          }
         });
       }
     </script>

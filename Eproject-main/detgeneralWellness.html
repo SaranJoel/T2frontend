@@ -61,6 +61,7 @@
           <h5 id="productName" class="card-title">Product Name</h5>
           <p id="productModel" class="card-text">Product Model</p>
           <p id="productPrice" class="card-text">Price</p>
+          <p id="productQuantity" class="card-text">Quantity:</p>
           <p class="card-text">Description:</p>
           <p id="productDescription" class="card-text"></p>
 
@@ -87,6 +88,7 @@
           name: "Daily Multivitamin",
           des: "A complete multivitamin supplement to support immunity, energy, and overall wellness.",
           price: 1200,
+          quantity: 50,
         },
         {
           id: 2,
@@ -95,6 +97,7 @@
           name: "Omega-3 Fish Oil",
           des: "High-quality fish oil capsules rich in EPA and DHA for heart and brain health.",
           price: 1500,
+          quantity: 30,
         },
         {
           id: 3,
@@ -103,6 +106,7 @@
           name: "Probiotic Supplement",
           des: "Promotes gut health and improves digestion with a blend of beneficial bacteria.",
           price: 1300,
+          quantity: 40,
         },
         {
           id: 4,
@@ -111,6 +115,7 @@
           name: "Collagen Powder",
           des: "Supports skin elasticity, joint health, and overall vitality with hydrolyzed collagen.",
           price: 1700,
+          quantity: 25,
         },
         {
           id: 5,
@@ -119,6 +124,7 @@
           name: "Ashwagandha Capsules",
           des: "Adaptogen capsules to reduce stress, improve focus, and enhance energy levels.",
           price: 900,
+          quantity: 60,
         },
         {
           id: 6,
@@ -127,6 +133,7 @@
           name: "Vitamin D3 Supplement",
           des: "Essential for bone health and immune support, especially during low sunlight exposure.",
           price: 1100,
+          quantity: 45,
         },
         {
           id: 7,
@@ -135,6 +142,7 @@
           name: "Zinc Tablets",
           des: "Boosts immunity and supports healthy skin with highly absorbable zinc.",
           price: 800,
+          quantity: 70,
         },
         {
           id: 8,
@@ -143,6 +151,7 @@
           name: "Magnesium Glycinate",
           des: "Promotes relaxation, muscle health, and better sleep with bioavailable magnesium.",
           price: 1400,
+          quantity: 35,
         },
         {
           id: 9,
@@ -151,6 +160,7 @@
           name: "Curcumin with Black Pepper",
           des: "Natural anti-inflammatory supplement with enhanced absorption.",
           price: 1600,
+          quantity: 50,
         },
         {
           id: 10,
@@ -159,6 +169,7 @@
           name: "Melatonin Tablets",
           des: "Improves sleep quality and supports a healthy sleep-wake cycle.",
           price: 700,
+          quantity: 80,
         },
         {
           id: 11,
@@ -167,6 +178,7 @@
           name: "Elderberry Gummies",
           des: "Rich in antioxidants, these gummies help strengthen the immune system.",
           price: 1300,
+          quantity: 55,
         },
         {
           id: 12,
@@ -175,6 +187,7 @@
           name: "Plant-Based Protein Powder",
           des: "A vegan-friendly protein supplement to support muscle health and general wellness.",
           price: 1900,
+          quantity: 20,
         },
         {
           id: 13,
@@ -183,6 +196,7 @@
           name: "Green Tea Extract",
           des: "Natural antioxidant to support metabolism and overall health.",
           price: 900,
+          quantity: 65,
         },
         {
           id: 14,
@@ -191,6 +205,7 @@
           name: "Biotin Hair and Nail Supplement",
           des: "Enhances hair growth, nail strength, and overall beauty with biotin.",
           price: 1200,
+          quantity: 40,
         },
         {
           id: 15,
@@ -199,6 +214,7 @@
           name: "CoQ10 Capsules",
           des: "Supports heart health and energy production at the cellular level.",
           price: 1800,
+          quantity: 30,
         },
         {
           id: 16,
@@ -207,6 +223,7 @@
           name: "Dietary Fiber Supplement",
           des: "Improves digestion and promotes a healthy gut with natural fiber.",
           price: 1000,
+          quantity: 75,
         },
       ];
 
@@ -225,13 +242,23 @@
         document.getElementById(
           "productPrice"
         ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById(
+          "productQuantity"
+        ).textContent = `Quantity: ${selectedProduct.quantity}`;
         document.getElementById("productDescription").textContent =
           selectedProduct.des;
 
         // Add to Cart Button Click Event
-        const addToCartButton = document.getElementById("addToCartButton");
         addToCartButton.addEventListener("click", () => {
-          alert(`Added ${selectedProduct.name} to the cart!`);
+          if (selectedProduct.quantity > 0) {
+            selectedProduct.quantity -= 1; // Reduce quantity
+            document.getElementById(
+              "productQuantity"
+            ).textContent = `Quantity: ${selectedProduct.quantity}`; // Update displayed quantity
+            alert(`Added ${selectedProduct.name} to the cart!`);
+          } else {
+            alert(`Sorry, ${selectedProduct.name} is out of stock!`);
+          }
         });
       }
     </script>

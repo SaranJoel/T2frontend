@@ -61,6 +61,7 @@
           <h5 id="productName" class="card-title">Product Name</h5>
           <p id="productModel" class="card-text">Product Model</p>
           <p id="productPrice" class="card-text">Price</p>
+          <p id="productQuantity" class="card-text">Quantity:</p>
           <p class="card-text">Description:</p>
           <p id="productDescription" class="card-text"></p>
 
@@ -87,6 +88,7 @@
           name: "Recovery Pro Capsules",
           des: "Premium recovery capsules designed to reduce muscle soreness and speed up recovery after workouts.",
           price: 500,
+          quantity: 50,
         },
         {
           id: 2,
@@ -95,6 +97,7 @@
           name: "Energy Boost Pills",
           des: "Formulated with caffeine and B vitamins to keep you energized throughout your day or workout.",
           price: 350,
+          quantity: 78,
         },
         {
           id: 3,
@@ -103,6 +106,7 @@
           name: "Hydration Electrolyte Tablets",
           des: "Replenish lost electrolytes and stay hydrated with these easy-to-use tablets.",
           price: 250,
+          quantity: 63,
         },
         {
           id: 4,
@@ -111,6 +115,7 @@
           name: "Amino Blast Capsules",
           des: "Essential amino acid capsules to support muscle recovery and endurance during workouts.",
           price: 450,
+          quantity: 80,
         },
         {
           id: 5,
@@ -119,6 +124,7 @@
           name: "Focus Fuel Tablets",
           des: "Enhance mental clarity and focus with this nootropic blend.",
           price: 400,
+          quantity: 58,
         },
         {
           id: 6,
@@ -127,6 +133,7 @@
           name: "Pre-Charge Energy Pills",
           des: "Boost stamina and energy levels with this pre-workout supplement.",
           price: 380,
+          quantity: 45,
         },
         {
           id: 7,
@@ -135,6 +142,7 @@
           name: "Joint Flex Capsules",
           des: "Promotes joint health and reduces inflammation for active individuals.",
           price: 300,
+          quantity: 74,
         },
         {
           id: 8,
@@ -143,6 +151,7 @@
           name: "Night Restore Capsules",
           des: "Enhance muscle recovery and improve sleep quality with this natural supplement.",
           price: 500,
+          quantity: 41,
         },
         {
           id: 9,
@@ -151,6 +160,7 @@
           name: "Endurance Tablets",
           des: "Increase stamina and reduce fatigue during prolonged physical activity.",
           price: 420,
+          quantity: 67,
         },
         {
           id: 10,
@@ -159,6 +169,7 @@
           name: "Cortisol Control Capsules",
           des: "Supports stress management and reduces cortisol levels after intense training.",
           price: 550,
+          quantity: 33,
         },
         {
           id: 11,
@@ -167,6 +178,7 @@
           name: "Anti-Fatigue Tablets",
           des: "Formulated to combat workout fatigue and keep you energized longer.",
           price: 300,
+          quantity: 59,
         },
         {
           id: 12,
@@ -175,6 +187,7 @@
           name: "Post-Charge Recovery Pills",
           des: "Optimize recovery and replenish glycogen levels post-workout.",
           price: 480,
+          quantity: 38,
         },
         {
           id: 13,
@@ -183,6 +196,7 @@
           name: "Flex Aid Capsules",
           des: "Support joint lubrication and flexibility with glucosamine and chondroitin.",
           price: 520,
+          quantity: 46,
         },
         {
           id: 14,
@@ -191,6 +205,7 @@
           name: "Sleep Aid Capsules",
           des: "Relax and recover with this blend of melatonin and magnesium.",
           price: 280,
+          quantity: 69,
         },
         {
           id: 15,
@@ -199,6 +214,7 @@
           name: "Lean Recovery Capsules",
           des: "Promotes muscle recovery without adding unnecessary calories.",
           price: 460,
+          quantity: 64,
         },
         {
           id: 16,
@@ -207,6 +223,7 @@
           name: "Calm Boost Tablets",
           des: "A blend of adaptogens to reduce stress and improve overall performance.",
           price: 340,
+          quantity: 77,
         },
       ];
 
@@ -225,13 +242,23 @@
         document.getElementById(
           "productPrice"
         ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById(
+          "productQuantity"
+        ).textContent = `Quantity: ${selectedProduct.quantity}`;
         document.getElementById("productDescription").textContent =
           selectedProduct.des;
 
         // Add to Cart Button Click Event
-        const addToCartButton = document.getElementById("addToCartButton");
         addToCartButton.addEventListener("click", () => {
-          alert(`Added ${selectedProduct.name} to the cart!`);
+          if (selectedProduct.quantity > 0) {
+            selectedProduct.quantity -= 1; // Reduce quantity
+            document.getElementById(
+              "productQuantity"
+            ).textContent = `Quantity: ${selectedProduct.quantity}`; // Update displayed quantity
+            alert(`Added ${selectedProduct.name} to the cart!`);
+          } else {
+            alert(`Sorry, ${selectedProduct.name} is out of stock!`);
+          }
         });
       }
     </script>

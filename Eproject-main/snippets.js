@@ -84,10 +84,10 @@ document.addEventListener("DOMContentLoaded", function () {
         <div class="col-lg-3  col-md-3 col-sm-6 px-0">
             <h3>Follow Us</h3>
             <ul id="follow">
-                <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-twitter"></i></a></li>
-                <li><a href=""><i class="fa-brands fa-linkedin"></i></a></li>
+                <li><a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href=" https://twitter.com/?lang=en"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="https://ca.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a></li>
             </ul>
         </div>
 

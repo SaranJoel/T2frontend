@@ -61,6 +61,8 @@
           <h5 id="productName" class="card-title">Product Name</h5>
           <p id="productModel" class="card-text">Product Model</p>
           <p id="productPrice" class="card-text">Price</p>
+          <p id="productQuantity" class="card-text">Quantity:</p>
+
           <p class="card-text">Description:</p>
           <p id="productDescription" class="card-text"></p>
 
@@ -87,6 +89,7 @@
           name: "Whey Protein Powder",
           des: "High-quality whey protein powder designed to support muscle recovery and weight management.",
           price: 2500,
+          quantity: 12,
         },
         {
           id: 2,
@@ -95,6 +98,7 @@
           name: "Plant-Based Protein Powder",
           des: "A vegan-friendly protein powder sourced from pea and rice proteins, ideal for weight control and muscle repair.",
           price: 2000,
+          quantity: 8,
         },
         {
           id: 3,
@@ -103,6 +107,7 @@
           name: "Multivitamin Gummies",
           des: "Delicious multivitamin gummies formulated to support metabolism and energy levels.",
           price: 1500,
+          quantity: 15,
         },
         {
           id: 4,
@@ -111,6 +116,7 @@
           name: "Fat Burner Capsules",
           des: "Capsules with natural ingredients to promote fat metabolism and energy enhancement.",
           price: 1800,
+          quantity: 5,
         },
         {
           id: 5,
@@ -119,6 +125,7 @@
           name: "Casein Protein Powder",
           des: "Slow-digesting casein protein powder to support muscle recovery overnight.",
           price: 2700,
+          quantity: 10,
         },
         {
           id: 6,
@@ -127,6 +134,7 @@
           name: "Appetite Suppressant Pills",
           des: "Herbal appetite suppressant pills designed to reduce hunger and support weight management.",
           price: 1200,
+          quantity: 7,
         },
         {
           id: 7,
@@ -135,6 +143,7 @@
           name: "Meal Replacement Shakes",
           des: "Complete nutrition meal replacement shakes for convenient weight management.",
           price: 3200,
+          quantity: 3,
         },
         {
           id: 8,
@@ -143,6 +152,7 @@
           name: "Electrolyte Hydration Drink",
           des: "A refreshing electrolyte drink to rehydrate and support active lifestyles.",
           price: 900,
+          quantity: 20,
         },
         {
           id: 9,
@@ -151,6 +161,7 @@
           name: "Protein Snack Bars",
           des: "Tasty protein bars ideal for on-the-go snacking and post-workout recovery.",
           price: 1200,
+          quantity: 18,
         },
         {
           id: 10,
@@ -159,6 +170,7 @@
           name: "Dietary Fiber Supplement",
           des: "High-fiber supplement to support digestion and weight wellness.",
           price: 800,
+          quantity: 14,
         },
         {
           id: 11,
@@ -167,6 +179,7 @@
           name: "Omega-3 Fish Oil Capsules",
           des: "Rich in EPA and DHA, these capsules support heart health and weight management.",
           price: 2200,
+          quantity: 9,
         },
         {
           id: 12,
@@ -175,6 +188,7 @@
           name: "Green Tea Extract Capsules",
           des: "Powerful antioxidants and metabolism boosters to aid in weight control.",
           price: 1700,
+          quantity: 6,
         },
         {
           id: 13,
@@ -183,6 +197,7 @@
           name: "BCAA Powder",
           des: "Branched-chain amino acids to support muscle recovery and reduce fatigue.",
           price: 2100,
+          quantity: 4,
         },
         {
           id: 14,
@@ -191,6 +206,7 @@
           name: "Collagen Peptides",
           des: "Supports skin health, joint support, and weight management.",
           price: 2500,
+          quantity: 11,
         },
         {
           id: 15,
@@ -199,6 +215,7 @@
           name: "Probiotic Capsules",
           des: "Improves digestion and gut health for better nutrient absorption and metabolism.",
           price: 1500,
+          quantity: 17,
         },
         {
           id: 16,
@@ -207,6 +224,7 @@
           name: "Carb Blocker Pills",
           des: "Helps reduce carbohydrate absorption to aid in weight loss.",
           price: 1800,
+          quantity: 8,
         },
       ];
 
@@ -225,13 +243,23 @@
         document.getElementById(
           "productPrice"
         ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById(
+          "productQuantity"
+        ).textContent = `Quantity: ${selectedProduct.quantity}`;
         document.getElementById("productDescription").textContent =
           selectedProduct.des;
 
         // Add to Cart Button Click Event
-        const addToCartButton = document.getElementById("addToCartButton");
         addToCartButton.addEventListener("click", () => {
-          alert(`Added ${selectedProduct.name} to the cart!`);
+          if (selectedProduct.quantity > 0) {
+            selectedProduct.quantity -= 1; // Reduce quantity
+            document.getElementById(
+              "productQuantity"
+            ).textContent = `Quantity: ${selectedProduct.quantity}`; // Update displayed quantity
+            alert(`Added ${selectedProduct.name} to the cart!`);
+          } else {
+            alert(`Sorry, ${selectedProduct.name} is out of stock!`);
+          }
         });
       }
     </script>

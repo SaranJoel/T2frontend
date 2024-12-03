@@ -61,6 +61,7 @@
           <h5 id="productName" class="card-title">Product Name</h5>
           <p id="productModel" class="card-text">Product Model</p>
           <p id="productPrice" class="card-text">Price</p>
+          <p id="productQuantity" class="card-text">Quantity:</p>
           <p class="card-text">Description:</p>
           <p id="productDescription" class="card-text"></p>
 
@@ -87,6 +88,7 @@
           name: "Whey Protein Capsules",
           des: "High-quality whey protein capsules to support muscle recovery and growth.",
           price: 450,
+          quantity: 50,
         },
         {
           id: 2,
@@ -95,6 +97,7 @@
           name: "Multi Max vitamin Capsules",
           des: "A blend of essential vitamins and minerals to promote overall health.",
           price: 300,
+          quantity: 75,
         },
         {
           id: 3,
@@ -103,6 +106,7 @@
           name: "Omega-3 Fish Oil Capsules",
           des: "Rich in omega-3 fatty acids to support heart and brain health.",
           price: 520,
+          quantity: 30,
         },
         {
           id: 4,
@@ -111,6 +115,7 @@
           name: "Creatine-Monohydrate Capsules",
           des: "Enhance performance and strength with creatine monohydrate capsules.",
           price: 400,
+          quantity: 40,
         },
         {
           id: 5,
@@ -119,6 +124,7 @@
           name: "Zinc Supplements",
           des: "Boost your immune system with high-potency zinc supplements.",
           price: 250,
+          quantity: 60,
         },
         {
           id: 6,
@@ -127,6 +133,7 @@
           name: "Iron Capsules",
           des: "Essential iron capsules to prevent anemia and improve energy levels.",
           price: 350,
+          quantity: 80,
         },
         {
           id: 7,
@@ -135,6 +142,7 @@
           name: "Collagen Peptide Capsules",
           des: "Support healthy skin, hair, and joints with collagen peptides.",
           price: 600,
+          quantity: 25,
         },
         {
           id: 8,
@@ -143,6 +151,7 @@
           name: "Calcium + Vitamin D Capsules",
           des: "Promote strong bones and teeth with calcium and vitamin D.",
           price: 280,
+          quantity: 45,
         },
         {
           id: 9,
@@ -151,6 +160,7 @@
           name: "Magnesium Supplements",
           des: "Help relax muscles and improve sleep with magnesium supplements.",
           price: 340,
+          quantity: 70,
         },
         {
           id: 10,
@@ -159,6 +169,7 @@
           name: "Probiotic Capsules",
           des: "Support digestive health and immune function with probiotics.",
           price: 500,
+          quantity: 50,
         },
         {
           id: 11,
@@ -167,6 +178,7 @@
           name: "Vitamin C Capsules",
           des: "Boost your immune system and skin health with vitamin C.",
           price: 220,
+          quantity: 90,
         },
         {
           id: 12,
@@ -175,6 +187,7 @@
           name: "Vitamin B Complex Capsules",
           des: "Support energy production and nervous system health with B complex.",
           price: 360,
+          quantity: 65,
         },
         {
           id: 13,
@@ -183,6 +196,7 @@
           name: "Turmeric Curcumin Capsules",
           des: "Anti-inflammatory turmeric capsules for joint and overall health.",
           price: 450,
+          quantity: 40,
         },
         {
           id: 14,
@@ -191,6 +205,7 @@
           name: "Ashwagandha Capsules",
           des: "Reduce stress and enhance mental clarity with ashwagandha supplements.",
           price: 410,
+          quantity: 50,
         },
         {
           id: 15,
@@ -199,6 +214,7 @@
           name: "Biotin Capsules",
           des: "Promote hair and nail growth with high-potency biotin supplements.",
           price: 330,
+          quantity: 85,
         },
         {
           id: 16,
@@ -207,6 +223,7 @@
           name: "Melatonin Capsules",
           des: "Improve sleep quality with natural melatonin supplements.",
           price: 250,
+          quantity: 60,
         },
       ];
 
@@ -225,13 +242,23 @@
         document.getElementById(
           "productPrice"
         ).textContent = `Price: $${selectedProduct.price}`;
+        document.getElementById(
+          "productQuantity"
+        ).textContent = `Quantity: ${selectedProduct.quantity}`;
         document.getElementById("productDescription").textContent =
           selectedProduct.des;
 
         // Add to Cart Button Click Event
-        const addToCartButton = document.getElementById("addToCartButton");
         addToCartButton.addEventListener("click", () => {
-          alert(`Added ${selectedProduct.name} to the cart!`);
+          if (selectedProduct.quantity > 0) {
+            selectedProduct.quantity -= 1; // Reduce quantity
+            document.getElementById(
+              "productQuantity"
+            ).textContent = `Quantity: ${selectedProduct.quantity}`; // Update displayed quantity
+            alert(`Added ${selectedProduct.name} to the cart!`);
+          } else {
+            alert(`Sorry, ${selectedProduct.name} is out of stock!`);
+          }
         });
       }
     </script>
